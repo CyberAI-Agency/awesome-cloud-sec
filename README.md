@@ -1,239 +1,226 @@
 # Awesome Cloud Security ⚡
 
-> A curated list of cloud security tools, frameworks, blogs, certifications, and learning resources — with a special focus on **OCI, AWS, Azure, and GCP**.
+> A curated collection of cloud security tools, learning resources, frameworks,
+> certifications, and references — built and maintained by
+> [CyberAI Agency](https://github.com/CyberAI-Agency).
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Maintained](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/CyberAI-Agency/awesome-cloud-sec)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: CC0](https://img.shields.io/badge/License-CC0-lightgrey.svg)](LICENSE)
+[![CyberAI Agency](https://img.shields.io/badge/By-CyberAI_Agency-4D148C?style=flat-square)](https://github.com/CyberAI-Agency)
 
-Maintained by [@nvsaigeetham](https://github.com/nvsaigeetham) · [CyberAI Agency](https://github.com/CyberAI-Agency)
+Maintained by [@nvsaigeetham](https://github.com/nvsaigeetham) · 15+ years enterprise multi-cloud security
 
 ---
 
 ## Contents
 
-- [CSPM & Posture Management](#cspm--posture-management)
-- [IAM & Identity Security](#iam--identity-security)
-- [Vulnerable-by-Design Labs](#vulnerable-by-design-labs)
-- [Red Team / Offensive Tools](#red-team--offensive-tools)
-- [Blue Team / Defensive Tools](#blue-team--defensive-tools)
-- [AI-Powered Security Tools](#ai-powered-security-tools)
+- [CyberAI Agency Tools](#cyberai-agency-tools)
+- [OCI Security](#oci-security)
+- [AWS Security](#aws-security)
+- [Azure Security](#azure-security)
+- [GCP Security](#gcp-security)
+- [AI Security](#ai-security)
 - [Threat Intelligence](#threat-intelligence)
-- [IaC Security](#iac-security)
-- [Container & Kubernetes Security](#container--kubernetes-security)
-- [Secrets Management](#secrets-management)
-- [OCI-Specific Resources](#oci-specific-resources)
-- [AWS-Specific Resources](#aws-specific-resources)
-- [Azure-Specific Resources](#azure-specific-resources)
-- [GCP-Specific Resources](#gcp-specific-resources)
-- [SIEM & Log Management](#siem--log-management)
 - [Compliance & GRC](#compliance--grc)
 - [CTF & Practice Labs](#ctf--practice-labs)
 - [Certifications](#certifications)
-- [Blogs & News](#blogs--news)
+- [Official Documentation](#official-documentation)
+- [Blogs & Research](#blogs--research)
 - [Conferences & Communities](#conferences--communities)
 
 ---
 
-## CSPM & Posture Management
+## CyberAI Agency Tools
 
-- **[Prowler](https://github.com/prowler-cloud/prowler)** — Open-source CSPM for AWS, Azure, GCP, Kubernetes. 300+ CIS checks. ![Stars](https://img.shields.io/github/stars/prowler-cloud/prowler?style=flat-square)
-- **[ScoutSuite](https://github.com/nccgroup/ScoutSuite)** — Multi-cloud security auditing tool. Supports OCI, AWS, Azure, GCP, Alibaba. ![Stars](https://img.shields.io/github/stars/nccgroup/ScoutSuite?style=flat-square)
-- **[CloudSploit](https://github.com/aquasecurity/cloudsploit)** — Cloud security configuration scanner by Aqua Security. ![Stars](https://img.shields.io/github/stars/aquasecurity/cloudsploit?style=flat-square)
-- **[CloudCustodian](https://github.com/cloud-custodian/cloud-custodian)** — Rules engine for cloud security, cost, and compliance. ![Stars](https://img.shields.io/github/stars/cloud-custodian/cloud-custodian?style=flat-square)
-- **[Steampipe](https://github.com/turbot/steampipe)** — SQL-based cloud configuration querying across all major providers. ![Stars](https://img.shields.io/github/stars/turbot/steampipe?style=flat-square)
-- **[CloudQuery](https://github.com/cloudquery/cloudquery)** — Cloud asset inventory framework using PostgreSQL. ![Stars](https://img.shields.io/github/stars/cloudquery/cloudquery?style=flat-square)
-- **[CSPMlite](https://github.com/CyberAI-Agency/CSPMlite)** ⚡ — Lightweight CSPM dashboard with React UI and AI finding summarizer.
+> Open-source security tools built by practitioners for practitioners.
+> All tools are free, MIT licensed, and built from real enterprise security work.
+
+### Cloud Security & CSPM
+
+| Tool | Description |
+|---|---|
+| [CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI) | Vulnerable-by-design OCI environment — 8 CTF scenarios covering IAM privesc, IDCS takeover, IMDS theft, VCN escape, Cloud Guard bypass. **First and only OCI CTF lab.** |
+| [CloudSentinel](https://github.com/CyberAI-Agency/CloudSentinel) | Multi-cloud IAM auditor for OCI · AWS · Azure · GCP. Detects non-federated users, MFA gaps, overpermissioned policies, stale credentials. AI remediation included. |
+| [CSPMlite](https://github.com/CyberAI-Agency/CSPMlite) | Lightweight CSPM dashboard with React UI, persistent finding history, and AI-powered finding summarizer. |
+| [VCN-SecurityAudit](https://github.com/CyberAI-Agency/VCN-SecurityAudit) | OCI VCN security list and NSG auditor across all regions and compartments. Auto-generates Terraform remediation for open rules. |
+| [PolicyScorer](https://github.com/CyberAI-Agency/PolicyScorer) | IAM policy risk scoring engine. Detects wildcards, cross-account trust abuse, and privilege escalation paths. AI explanation per finding. |
+| [MFAWatch](https://github.com/CyberAI-Agency/MFAWatch) | MFA gap auditor for OCI Classic IAM + IDCS, AWS, and Azure. AI-generated remediation emails and Slack alerting. |
+| [TagHunter](https://github.com/CyberAI-Agency/TagHunter) | Cross-cloud resource tag compliance scanner. Supports EAI tag frameworks. Terraform remediation PR generator. |
+| [SecBaseline](https://github.com/CyberAI-Agency/SecBaseline) | CIS Level 1 & 2 benchmark auto-checker with delta tracking between scan runs. PDF and Excel output. |
+| [CloudInventoryAI](https://github.com/CyberAI-Agency/CloudInventoryAI) | AI-enhanced multi-cloud resource inventory with cost anomaly detection and topology mapping. |
+| [CloudDriftDetector](https://github.com/CyberAI-Agency/CloudDriftDetector) | Detects configuration drift between Terraform IaC state and live cloud resources. Alerts on unauthorized manual changes. |
+| [OCIAttackGraph](https://github.com/CyberAI-Agency/OCIAttackGraph) | OCI privilege escalation path mapper using Neo4j. Finds shortest path to admin across all IAM policies in a tenancy. |
+| [OCI-PAR-Tracker](https://github.com/CyberAI-Agency/OCI-PAR-Tracker) | Privileged Access Review tracker for OCI Classic IAM + IDCS with risk scoring and reviewer workflow. |
+| [CloudGuardExporter](https://github.com/CyberAI-Agency/CloudGuardExporter) | OCI Cloud Guard problem exporter with AI-generated executive reports and trend analysis. |
+| [OCI Security Checklist](https://github.com/CyberAI-Agency/oci-security-checklist) | Comprehensive OCI security hardening checklist — IAM, VCN, Compute, Storage, Logging, Cloud Guard, Compliance. |
+
+### AI Security Agents
+
+| Agent | Description |
+|---|---|
+| [CyberOpsOrchestrator](https://github.com/CyberAI-Agency/CyberOpsOrchestrator) | Master AI coordinator that routes security tasks to specialist agents, manages parallel execution, and aggregates findings into unified reports. |
+| [CloudGuardianAI](https://github.com/CyberAI-Agency/CloudGuardianAI) | Autonomous 24/7 cloud posture monitoring agent. Detects misconfigs, generates Terraform fixes, alerts via Slack/Teams, creates Jira tickets. |
+| [ThreatHunterAI](https://github.com/CyberAI-Agency/ThreatHunterAI) | AI-driven SIEM threat hunting agent. Hunts for IOCs, lateral movement, and anomalies. 100% MITRE ATT&CK mapped. |
+| [IAMAnalyzerAI](https://github.com/CyberAI-Agency/IAMAnalyzerAI) | IAM privilege escalation path agent using Neo4j graph analysis across OCI, AWS, and Azure. |
+| [SOCAnalystAI](https://github.com/CyberAI-Agency/SOCAnalystAI) | AI L1 SOC analyst — triages alerts, enriches with threat intel, determines severity, creates tickets automatically. |
+| [CVEResearcherAI](https://github.com/CyberAI-Agency/CVEResearcherAI) | 24/7 CVE monitoring agent with AI enrichment and auto-publishing to LinkedIn, Reddit, X, Discord, and Telegram. |
+| [ComplianceCopilotAI](https://github.com/CyberAI-Agency/ComplianceCopilotAI) | AI GRC copilot for NIST 800-53, CIS, ISO 27001, and FedRAMP. Gap analysis, policy templates, and audit evidence generation. |
+| [PenTestAgentAI](https://github.com/CyberAI-Agency/PenTestAgentAI) | Autonomous red team agent with strict scope enforcement and human approval gates. |
+
+### Red Team Tools
+
+| Tool | Description |
+|---|---|
+| [PHANTOMBREACH](https://github.com/nvsaigeetham/PHANTOMBREACH) | Cyberpunk penetration testing platform with AI attack chain planner and built-in report generator. |
+| [CloudRaider](https://github.com/CyberAI-Agency/CloudRaider) | MITRE ATT&CK mapped cloud attack simulation for OCI, AWS, and Azure. Safe, scoped purple team scenarios. |
+| [IMDSThief](https://github.com/CyberAI-Agency/IMDSThief) | Multi-cloud IMDS credential theft educational demo. Covers OCI, AWS IMDSv1/v2, and Azure. Includes defensive mitigations. |
+| [JWTAnalyzer](https://github.com/CyberAI-Agency/JWTAnalyzer) | Cloud JWT token weakness detector. Algorithm confusion, weak secrets, missing claims. OCI IDCS, AWS Cognito, Azure AD. |
+
+### Blue Team & Defensive Tools
+
+| Tool | Description |
+|---|---|
+| [SIEMForge](https://github.com/CyberAI-Agency/SIEMForge) | Cloud log normalizer converting OCI Audit, AWS CloudTrail, and Azure Monitor logs to ECS format for any SIEM. |
+| [SecretScannerAI](https://github.com/CyberAI-Agency/SecretScannerAI) | AI-powered cloud storage secret scanner for OCI Object Storage, S3, and Azure Blob. LLM validation reduces false positives. |
+
+### AI Security Tools
+
+| Tool | Description |
+|---|---|
+| [PromptGuardAI](https://github.com/nvsaigeetham/PromptGuardAI) | LLM prompt injection and jailbreak detector with MCP server scanning. OWASP Agentic Top 10 checks. |
+| [ThreatModelAI](https://github.com/CyberAI-Agency/ThreatModelAI) | AI threat modeling from architecture diagrams. STRIDE + PASTA methodology. Outputs attack trees and MITRE mappings. |
+| [CVEChat](https://github.com/CyberAI-Agency/CVEChat) | Conversational interface over live NVD and CISA KEV. Ask plain-English questions about current vulnerabilities. |
+| [PhishSenseAI](https://github.com/CyberAI-Agency/PhishSenseAI) | LLM phishing email analyzer. Scores probability, extracts IOCs, identifies techniques, generates training points. |
+| [CyberPolicyAI](https://github.com/nvsaigeetham/CyberPolicyAI) | NIST SP 800-53 Rev5 policy generator — 14 sheets, 29K+ live formulas, risk heat maps, gap analysis, cloud provider mapping. |
+| [WizExportAnalyzer](https://github.com/CyberAI-Agency/WizExportAnalyzer) | AI-enhanced vulnerability export analyzer. Groups by application, scores by exploitability, generates executive summaries. |
+
+### Education & Community
+
+| Resource | Description |
+|---|---|
+| [OCI Security Checklist](https://github.com/CyberAI-Agency/oci-security-checklist) | Comprehensive OCI hardening checklist — the definitive community reference for OCI security. |
+| [CTF Notes](https://github.com/nvsaigeetham/ctf-notes) | Full write-ups from Wiz CTF competitions: Needle in a Haystack, Game of Pods (CVE-2024-3177), Container Escape, Azure OAuth Abuse, Malware Busters. |
+| [CloudSec Interview Prep](https://github.com/CyberAI-Agency/cloudsec-interview-prep) | 500+ cloud security interview questions covering IAM, CSPM, IR, and architecture across OCI, AWS, Azure, and GCP. |
+| [Threat Intel Portal](https://cyberai.agency) | Live CVE feed with AI-powered summaries and cloud-specific advisories — updated continuously. |
 
 ---
 
-## IAM & Identity Security
+## OCI Security
 
-- **[pMapper](https://github.com/nccgroup/PMapper)** — AWS IAM privilege escalation path mapper using graph analysis. ![Stars](https://img.shields.io/github/stars/nccgroup/PMapper?style=flat-square)
-- **[Cloudsplaining](https://github.com/salesforce/cloudsplaining)** — AWS IAM security assessment tool identifying least-privilege violations. ![Stars](https://img.shields.io/github/stars/salesforce/cloudsplaining?style=flat-square)
-- **[policy_sentry](https://github.com/salesforce/policy_sentry)** — AWS IAM least privilege policy generator. ![Stars](https://img.shields.io/github/stars/salesforce/policy_sentry?style=flat-square)
-- **[AirIAM](https://github.com/bridgecrewio/AirIAM)** — AWS IAM least privilege enforcement tool. ![Stars](https://img.shields.io/github/stars/bridgecrewio/AirIAM?style=flat-square)
-- **[CloudSentinel](https://github.com/CyberAI-Agency/CloudSentinel)** ⚡ — Multi-cloud IAM auditor (OCI · AWS · Azure · GCP) with AI remediation.
-- **[IAMAnalyzerAI](https://github.com/CyberAI-Agency/IAMAnalyzerAI)** ⚡ — AI agent for IAM privilege escalation path analysis using Neo4j.
-- **[MFAWatch](https://github.com/CyberAI-Agency/MFAWatch)** ⚡ — MFA gap auditor across OCI, AWS, and Azure with AI remediation emails.
-- **[OCI-PAR-Tracker](https://github.com/CyberAI-Agency/OCI-PAR-Tracker)** ⚡ — Privileged Access Review tracker for OCI (Classic IAM + IDCS) with risk scoring.
+### Learning & Documentation
+- [OCI Security Architecture](https://www.oracle.com/security/cloud-security/) — Official Oracle OCI security documentation
+- [OCI CIS Benchmark](https://www.cisecurity.org/benchmark/oracle_cloud) — CIS benchmark for Oracle Cloud Infrastructure
+- [OCI Cloud Guard Documentation](https://docs.oracle.com/en-us/iaas/cloud-guard/) — Native OCI security monitoring service
+- [OCI IAM Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/home.htm) — OCI Identity and Access Management
+- [OCI Security Learning Path](https://learn.oracle.com/ols/learning-path/become-an-oci-security-professional/35644/98057) — Official Oracle certification learning path
 
----
-
-## Vulnerable-by-Design Labs
-
-- **[CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI)** ⚡ — First vulnerable-by-design OCI environment. IAM privesc, IDCS takeover, IMDS theft, VCN escape. **No other tool like this exists.**
-- **[CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat)** — Rhino Security Labs' vulnerable-by-design AWS deployment tool. ![Stars](https://img.shields.io/github/stars/RhinoSecurityLabs/cloudgoat?style=flat-square)
-- **[Kubernetes Goat](https://github.com/madhuakula/kubernetes-goat)** — Vulnerable-by-design Kubernetes cluster for K8s security training. ![Stars](https://img.shields.io/github/stars/madhuakula/kubernetes-goat?style=flat-square)
-- **[WrongSecrets](https://github.com/OWASP/wrongsecrets)** — OWASP vulnerable app demonstrating secrets management mistakes. ![Stars](https://img.shields.io/github/stars/OWASP/wrongsecrets?style=flat-square)
-- **[flaws.cloud](http://flaws.cloud)** — AWS security challenges teaching through CTF-style flaws.
-- **[flaws2.cloud](http://flaws2.cloud)** — Sequel to flaws.cloud with attacker and defender paths.
+### OCI Security Practice
+- [CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI) ⚡ — Hands-on OCI attack scenarios
+- [OCI Security Checklist](https://github.com/CyberAI-Agency/oci-security-checklist) ⚡ — Hardening reference
+- [CTF Notes — OCI Scenarios](https://github.com/nvsaigeetham/ctf-notes) ⚡ — Real attack write-ups
 
 ---
 
-## Red Team / Offensive Tools
+## AWS Security
 
-- **[Pacu](https://github.com/RhinoSecurityLabs/pacu)** — AWS exploitation framework for offensive security testing. ![Stars](https://img.shields.io/github/stars/RhinoSecurityLabs/pacu?style=flat-square)
-- **[MicroBurst](https://github.com/NetSPI/MicroBurst)** — PowerShell scripts for Azure security assessment and exploitation. ![Stars](https://img.shields.io/github/stars/NetSPI/MicroBurst?style=flat-square)
-- **[GCPBucketBrute](https://github.com/RhinoSecurityLabs/GCPBucketBrute)** — GCP bucket enumeration and privilege escalation. ![Stars](https://img.shields.io/github/stars/RhinoSecurityLabs/GCPBucketBrute?style=flat-square)
-- **[Stormspotter](https://github.com/Azure/Stormspotter)** — Azure AD attack graph tool for mapping identity paths. ![Stars](https://img.shields.io/github/stars/Azure/Stormspotter?style=flat-square)
-- **[enumerate-iam](https://github.com/andresriancho/enumerate-iam)** — Brute force enumeration of AWS IAM permissions. ![Stars](https://img.shields.io/github/stars/andresriancho/enumerate-iam?style=flat-square)
-- **[PHANTOMBREACH](https://github.com/nvsaigeetham/PHANTOMBREACH)** ⚡ — Cyberpunk penetration testing platform with AI attack chain planner.
-- **[CloudRaider](https://github.com/CyberAI-Agency/CloudRaider)** ⚡ — MITRE ATT&CK mapped cloud attack simulation for OCI, AWS, Azure.
-- **[IMDSThief](https://github.com/CyberAI-Agency/IMDSThief)** ⚡ — Multi-cloud IMDS credential theft educational demo with defensive mitigations.
+### Learning & Documentation
+- [AWS Security Documentation](https://docs.aws.amazon.com/security/) — Official AWS security guides
+- [AWS Well-Architected Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html) — AWS security best practices
+- [AWS CloudTrail Documentation](https://docs.aws.amazon.com/cloudtrail/) — AWS audit logging reference
+- [AWS IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) — Official IAM guidance
+- [flaws.cloud](http://flaws.cloud) — Free AWS security CTF challenges
+- [flaws2.cloud](http://flaws2.cloud) — AWS attacker and defender paths
 
----
-
-## Blue Team / Defensive Tools
-
-- **[Falco](https://github.com/falcosecurity/falco)** — Cloud-native runtime security for containers and Kubernetes. ![Stars](https://img.shields.io/github/stars/falcosecurity/falco?style=flat-square)
-- **[Cartography](https://github.com/lyft/cartography)** — Infrastructure relationship mapper using Neo4j. AWS focus. ![Stars](https://img.shields.io/github/stars/lyft/cartography?style=flat-square)
-- **[CloudMapper](https://github.com/duo-labs/cloudmapper)** — AWS environment visualization and network analysis tool. ![Stars](https://img.shields.io/github/stars/duo-labs/cloudmapper?style=flat-square)
-- **[SIEMForge](https://github.com/CyberAI-Agency/SIEMForge)** ⚡ — Cloud log normalizer converting OCI/AWS/Azure logs to ECS format.
-- **[SecBaseline](https://github.com/CyberAI-Agency/SecBaseline)** ⚡ — CIS benchmark auto-checker with delta tracking and PDF/Excel output.
-- **[CloudGuardExporter](https://github.com/CyberAI-Agency/CloudGuardExporter)** ⚡ — OCI Cloud Guard problem exporter with AI-generated executive reports.
+### AWS Security Practice
+- [CloudSentinel](https://github.com/CyberAI-Agency/CloudSentinel) ⚡ — Multi-cloud IAM auditor including AWS
+- [ThreatHunterAI](https://github.com/CyberAI-Agency/ThreatHunterAI) ⚡ — AWS CloudTrail threat hunting
+- [IMDSThief](https://github.com/CyberAI-Agency/IMDSThief) ⚡ — AWS IMDS educational demo
+- [CTF Notes — MCRTA AWS Labs](https://github.com/nvsaigeetham/ctf-notes) ⚡ — AWS SSRF and IAM privesc overviews
 
 ---
 
-## AI-Powered Security Tools
+## Azure Security
 
-- **[CloudGuardianAI](https://github.com/CyberAI-Agency/CloudGuardianAI)** ⚡ — Autonomous 24/7 cloud posture monitoring agent built on Claude.
-- **[ThreatHunterAI](https://github.com/CyberAI-Agency/ThreatHunterAI)** ⚡ — AI-driven SIEM threat hunting with MITRE ATT&CK mapping.
-- **[SOCAnalystAI](https://github.com/CyberAI-Agency/SOCAnalystAI)** ⚡ — AI L1 SOC analyst for alert triage, enrichment, and ticketing.
-- **[PromptGuardAI](https://github.com/nvsaigeetham/PromptGuardAI)** ⚡ — LLM prompt injection and jailbreak detector with MCP server scanning.
-- **[ThreatModelAI](https://github.com/CyberAI-Agency/ThreatModelAI)** ⚡ — AI threat modeling from architecture diagrams using STRIDE + PASTA.
-- **[PhishSenseAI](https://github.com/CyberAI-Agency/PhishSenseAI)** ⚡ — LLM phishing email analyzer and IOC extractor.
-- **[CyberOpsOrchestrator](https://github.com/CyberAI-Agency/CyberOpsOrchestrator)** ⚡ — Master AI coordinator routing security tasks across all specialist agents.
+### Learning & Documentation
+- [Azure Security Documentation](https://docs.microsoft.com/en-us/azure/security/) — Official Microsoft Azure security docs
+- [Azure Security Benchmark](https://docs.microsoft.com/en-us/security/benchmark/azure/) — Microsoft security best practices
+- [Entra ID Documentation](https://docs.microsoft.com/en-us/azure/active-directory/) — Azure AD / Entra ID reference
+- [Azure Key Vault Best Practices](https://docs.microsoft.com/en-us/azure/key-vault/general/best-practices) — Secrets management guidance
+- [Microsoft Defender for Cloud Docs](https://docs.microsoft.com/en-us/azure/defender-for-cloud/) — Native Azure CSPM
+
+### Azure Security Practice
+- [CloudSentinel](https://github.com/CyberAI-Agency/CloudSentinel) ⚡ — Multi-cloud IAM auditor including Azure
+- [JWTAnalyzer](https://github.com/CyberAI-Agency/JWTAnalyzer) ⚡ — Azure AD JWT token weakness detector
+- [CTF Notes — Breaking The Barriers](https://github.com/nvsaigeetham/ctf-notes) ⚡ — Azure OAuth Entra ID write-up
+
+---
+
+## GCP Security
+
+### Learning & Documentation
+- [GCP Security Documentation](https://cloud.google.com/security) — Official Google Cloud security docs
+- [GCP Security Best Practices](https://cloud.google.com/security/best-practices) — Google Cloud security guidance
+- [GCP IAM Documentation](https://cloud.google.com/iam/docs) — GCP Identity and Access Management reference
+- [GCP Cloud Audit Logs](https://cloud.google.com/logging/docs/audit) — GCP audit logging reference
+
+### GCP Security Practice
+- [CloudSentinel](https://github.com/CyberAI-Agency/CloudSentinel) ⚡ — Multi-cloud IAM auditor including GCP
+- [ThreatHunterAI](https://github.com/CyberAI-Agency/ThreatHunterAI) ⚡ — GCP audit log threat hunting
+
+---
+
+## AI Security
+
+### Learning & Documentation
+- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) — Top 10 risks for LLM applications
+- [OWASP Agentic AI Top 10](https://owasp.org/www-project-top-10-for-agentic-ai/) — Top 10 risks for AI agents
+- [MITRE ATLAS](https://atlas.mitre.org/) — Adversarial threat landscape for AI systems
+- [NIST AI Risk Management Framework](https://www.nist.gov/system/files/documents/2023/01/26/NIST.AI.100-1.pdf) — AI security and governance guidance
+
+### AI Security Practice
+- [PromptGuardAI](https://github.com/nvsaigeetham/PromptGuardAI) ⚡ — LLM prompt injection detector
+- [ThreatModelAI](https://github.com/CyberAI-Agency/ThreatModelAI) ⚡ — AI threat modeling tool
+- [PhishSenseAI](https://github.com/CyberAI-Agency/PhishSenseAI) ⚡ — AI phishing analyzer
 
 ---
 
 ## Threat Intelligence
 
-- **[CVEResearcherAI](https://github.com/CyberAI-Agency/CVEResearcherAI)** ⚡ — 24/7 CVE monitor with AI enrichment and auto-publishing to 6 platforms.
-- **[OpenCTI](https://github.com/OpenCTI-Platform/opencti)** — Open-source cyber threat intelligence platform. ![Stars](https://img.shields.io/github/stars/OpenCTI-Platform/opencti?style=flat-square)
-- **[MISP](https://github.com/MISP/MISP)** — Malware Information Sharing Platform for threat intelligence. ![Stars](https://img.shields.io/github/stars/MISP/MISP?style=flat-square)
-- **[TheHive](https://github.com/TheHive-Project/TheHive)** — Scalable security incident response platform. ![Stars](https://img.shields.io/github/stars/TheHive-Project/TheHive?style=flat-square)
-- **[CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)** — Known Exploited Vulnerabilities catalog — essential daily reading.
-- **[NVD](https://nvd.nist.gov/)** — NIST National Vulnerability Database — official CVE source.
-
----
-
-## IaC Security
-
-- **[Checkov](https://github.com/bridgecrewio/checkov)** — IaC static analysis for Terraform, CloudFormation, Kubernetes. ![Stars](https://img.shields.io/github/stars/bridgecrewio/checkov?style=flat-square)
-- **[tfsec](https://github.com/aquasecurity/tfsec)** — Terraform security scanner. Fast, focused, CI/CD friendly. ![Stars](https://img.shields.io/github/stars/aquasecurity/tfsec?style=flat-square)
-- **[Terrascan](https://github.com/tenable/terrascan)** — Static code analyzer for Terraform, K8s, Helm, Dockerfile. ![Stars](https://img.shields.io/github/stars/tenable/terrascan?style=flat-square)
-- **[KICS](https://github.com/Checkmarx/kics)** — Keeping Infrastructure as Code Secure — multi-format IaC scanner. ![Stars](https://img.shields.io/github/stars/Checkmarx/kics?style=flat-square)
-- **[CloudDriftDetector](https://github.com/CyberAI-Agency/CloudDriftDetector)** ⚡ — Detects drift between Terraform state and live cloud configuration.
-
----
-
-## Container & Kubernetes Security
-
-- **[Trivy](https://github.com/aquasecurity/trivy)** — Comprehensive vulnerability scanner for containers, IaC, and filesystems. ![Stars](https://img.shields.io/github/stars/aquasecurity/trivy?style=flat-square)
-- **[Grype](https://github.com/anchore/grype)** — Fast vulnerability scanner for container images. ![Stars](https://img.shields.io/github/stars/anchore/grype?style=flat-square)
-- **[Kube-bench](https://github.com/aquasecurity/kube-bench)** — Checks Kubernetes clusters against CIS Kubernetes Benchmark. ![Stars](https://img.shields.io/github/stars/aquasecurity/kube-bench?style=flat-square)
-- **[Kube-hunter](https://github.com/aquasecurity/kube-hunter)** — Kubernetes penetration testing tool. ![Stars](https://img.shields.io/github/stars/aquasecurity/kube-hunter?style=flat-square)
-- **[Falco](https://github.com/falcosecurity/falco)** — Runtime security monitoring for containers and Kubernetes. ![Stars](https://img.shields.io/github/stars/falcosecurity/falco?style=flat-square)
-
----
-
-## Secrets Management
-
-- **[TruffleHog](https://github.com/trufflesecurity/trufflehog)** — Scans git history and filesystems for leaked credentials. ![Stars](https://img.shields.io/github/stars/trufflesecurity/trufflehog?style=flat-square)
-- **[Gitleaks](https://github.com/gitleaks/gitleaks)** — Fast, lightweight secret scanner for git repos and files. ![Stars](https://img.shields.io/github/stars/gitleaks/gitleaks?style=flat-square)
-- **[detect-secrets](https://github.com/Yelp/detect-secrets)** — Secret detection focused on reducing false positives. ![Stars](https://img.shields.io/github/stars/Yelp/detect-secrets?style=flat-square)
-- **[HashiCorp Vault](https://github.com/hashicorp/vault)** — Secrets management, encryption-as-a-service, and privileged access. ![Stars](https://img.shields.io/github/stars/hashicorp/vault?style=flat-square)
-- **[SecretScannerAI](https://github.com/CyberAI-Agency/SecretScannerAI)** ⚡ — AI-powered cloud storage secret scanner (OCI Object Storage, S3, Azure Blob).
-
----
-
-## OCI-Specific Resources
-
-### Tools
-- **[CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI)** ⚡ — Vulnerable-by-design OCI CTF lab. First and only of its kind.
-- **[OCI-PAR-Tracker](https://github.com/CyberAI-Agency/OCI-PAR-Tracker)** ⚡ — Privileged Access Review tracker for OCI Classic IAM + IDCS.
-- **[VCN-SecurityAudit](https://github.com/CyberAI-Agency/VCN-SecurityAudit)** ⚡ — OCI VCN security list and NSG auditor across all regions and compartments.
-- **[OCIAttackGraph](https://github.com/CyberAI-Agency/OCIAttackGraph)** ⚡ — OCI privilege escalation path mapper using Neo4j.
-- **[ScoutSuite](https://github.com/nccgroup/ScoutSuite)** — Only major OSS multi-cloud auditor with OCI support (limited coverage).
-
-### Official Documentation
-- **[OCI Security Architecture](https://www.oracle.com/security/cloud-security/)** — Oracle's official OCI security documentation.
-- **[OCI CIS Benchmark](https://www.cisecurity.org/benchmark/oracle_cloud)** — CIS benchmark for Oracle Cloud Infrastructure.
-- **[OCI Cloud Guard Docs](https://docs.oracle.com/en-us/iaas/cloud-guard/)** — Native OCI security monitoring service documentation.
-- **[OCI Security Checklist](https://github.com/CyberAI-Agency/oci-security-checklist)** ⚡ — Community-maintained comprehensive OCI hardening checklist.
-
-### Learning
-- **[OCI Security Learning Path](https://learn.oracle.com/ols/learning-path/become-an-oci-security-professional/35644/98057)** — Official Oracle OCI security certification learning path.
-- **[OCI CTF Write-ups](https://github.com/nvsaigeetham/ctf-notes)** ⚡ — Real OCI attack scenarios from Wiz CTF competitions.
-
----
-
-## AWS-Specific Resources
-
-### Tools
-- **[Prowler](https://github.com/prowler-cloud/prowler)** — Industry standard AWS/Azure/GCP security auditing tool.
-- **[CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat)** — Vulnerable-by-design AWS deployment tool by Rhino Security Labs.
-- **[Pacu](https://github.com/RhinoSecurityLabs/pacu)** — AWS exploitation framework.
-- **[pMapper](https://github.com/nccgroup/PMapper)** — AWS IAM privilege escalation path analyzer.
-
-### Learning
-- **[flaws.cloud](http://flaws.cloud)** — Free AWS security CTF challenges.
-- **[AWS Security Workshops](https://workshops.aws/categories/Security)** — Official AWS security hands-on workshops.
-
----
-
-## Azure-Specific Resources
-
-### Tools
-- **[MicroBurst](https://github.com/NetSPI/MicroBurst)** — PowerShell toolkit for Azure security assessments.
-- **[Stormspotter](https://github.com/Azure/Stormspotter)** — Azure AD and resource attack graph tool.
-- **[ROADrecon](https://github.com/dirkjanm/ROADtools)** — Azure AD exploration and enumeration framework.
-- **[JWTAnalyzer](https://github.com/CyberAI-Agency/JWTAnalyzer)** ⚡ — Cloud JWT weakness detector including Azure AD tokens.
-
-### Learning
-- **[Azure Security Benchmark](https://docs.microsoft.com/en-us/security/benchmark/azure/)** — Microsoft's security best practices for Azure.
-
----
-
-## GCP-Specific Resources
-
-- **[GCPBucketBrute](https://github.com/RhinoSecurityLabs/GCPBucketBrute)** — GCP bucket enumeration and privilege escalation.
-- **[Forseti Security](https://github.com/forseti-security/forseti-security)** — GCP security monitoring and enforcement.
-- **[ScoutSuite](https://github.com/nccgroup/ScoutSuite)** — Multi-cloud auditor with GCP support.
-
----
-
-## SIEM & Log Management
-
-- **[Wazuh](https://github.com/wazuh/wazuh)** — Open-source XDR and SIEM for host monitoring and threat detection. ![Stars](https://img.shields.io/github/stars/wazuh/wazuh?style=flat-square)
-- **[Graylog](https://github.com/Graylog2/graylog2-server)** — Open-source log management and SIEM platform. ![Stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=flat-square)
-- **[Sigma](https://github.com/SigmaHQ/sigma)** — Generic signature format for SIEM detection rules. ![Stars](https://img.shields.io/github/stars/SigmaHQ/sigma?style=flat-square)
-- **[ElastAlert](https://github.com/Yelp/elastalert)** — Alerting framework for Elasticsearch SIEM use cases. ![Stars](https://img.shields.io/github/stars/Yelp/elastalert?style=flat-square)
-- **[SIEMForge](https://github.com/CyberAI-Agency/SIEMForge)** ⚡ — Cloud log normalizer to ECS format for any SIEM. OCI · AWS · Azure.
+### Sources & Feeds
+- [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — US government Known Exploited Vulnerabilities
+- [NVD — NIST](https://nvd.nist.gov/) — National Vulnerability Database — official CVE source
+- [MITRE ATT&CK Cloud Matrix](https://attack.mitre.org/matrices/enterprise/cloud/) — Cloud attack technique framework
+- [CyberAI Threat Intel Portal](https://cyberai.agency) ⚡ — Live CVE feed with AI summaries and cloud advisories
 
 ---
 
 ## Compliance & GRC
 
-- **[CyberPolicyAI](https://github.com/nvsaigeetham/CyberPolicyAI)** ⚡ — NIST SP 800-53 Rev5 Excel generator — 14 sheets, 29K+ live formulas.
-- **[ComplianceCopilotAI](https://github.com/CyberAI-Agency/ComplianceCopilotAI)** ⚡ — AI GRC copilot for NIST, CIS, ISO 27001, FedRAMP.
-- **[OpenSCAP](https://github.com/OpenSCAP/openscap)** — Open-source SCAP toolkit for compliance automation. ![Stars](https://img.shields.io/github/stars/OpenSCAP/openscap?style=flat-square)
-- **[CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks)** — Industry-standard security configuration guidelines.
-- **[NIST SP 800-53](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)** — NIST security and privacy controls for federal information systems.
+### Frameworks & Standards
+- [NIST SP 800-53 Rev5](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final) — Security and privacy controls
+- [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks) — Security configuration guidelines for all major platforms
+- [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) — Information security management standard
+- [CSA Cloud Controls Matrix](https://cloudsecurityalliance.org/research/cloud-controls-matrix/) — Cloud security controls framework
+- [FedRAMP](https://www.fedramp.gov/) — US federal cloud security authorization framework
+
+### GRC Practice
+- [CyberPolicyAI](https://github.com/nvsaigeetham/CyberPolicyAI) ⚡ — NIST 800-53 policy generator
+- [ComplianceCopilotAI](https://github.com/CyberAI-Agency/ComplianceCopilotAI) ⚡ — AI GRC copilot
+- [OCI Security Checklist](https://github.com/CyberAI-Agency/oci-security-checklist) ⚡ — OCI CIS benchmark reference
 
 ---
 
 ## CTF & Practice Labs
 
-- **[CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI)** ⚡ — OCI vulnerable-by-design CTF lab. First of its kind.
-- **[CloudGoat](https://github.com/RhinoSecurityLabs/cloudgoat)** — AWS vulnerable-by-design CTF lab by Rhino Security Labs.
-- **[Kubernetes Goat](https://github.com/madhuakula/kubernetes-goat)** — Kubernetes security CTF lab.
-- **[Wiz CTF](https://www.wiz.io/lp/wiz-ctf)** — Cloud security CTF competitions by Wiz.
-- **[HackTheBox](https://www.hackthebox.com/)** — Cloud security challenges on HackTheBox platform.
-- **[TryHackMe](https://tryhackme.com/)** — Guided cloud security learning paths and labs.
-- **[CTF Write-ups](https://github.com/nvsaigeetham/ctf-notes)** ⚡ — Wiz CTF wins: Game of Pods (CVE-2024-3177), Container Escape, Azure OAuth Abuse, and more.
+| Resource | Description |
+|---|---|
+| [CloudGoat-OCI](https://github.com/CyberAI-Agency/CloudGoat-OCI) ⚡ | OCI vulnerable-by-design CTF lab — first of its kind |
+| [CTF Notes](https://github.com/nvsaigeetham/ctf-notes) ⚡ | Real CTF write-ups — Wiz CTF, MCRTA, MCBTA |
+| [Wiz CTF](https://www.wiz.io/lp/wiz-ctf) | Cloud security CTF competitions by Wiz |
+| [flaws.cloud](http://flaws.cloud) | Free AWS security CTF challenges |
+| [HackTheBox](https://www.hackthebox.com/) | Cloud security challenges platform |
+| [TryHackMe](https://tryhackme.com/) | Guided cloud security learning paths |
 
 ---
 
@@ -250,44 +237,54 @@ Maintained by [@nvsaigeetham](https://github.com/nvsaigeetham) · [CyberAI Agenc
 | **CASP+** | CompTIA | Advanced | Enterprise security |
 | **MCRTA** | Cyberwarfare Labs | Intermediate | Multi-cloud red team |
 | **MCBTA** | Cyberwarfare Labs | Intermediate | Multi-cloud blue team |
-| **CEH** | EC-Council | Intermediate | Ethical hacking |
 | **OSCP** | Offensive Security | Advanced | Penetration testing |
 
 ---
 
-## Blogs & News
+## Official Documentation
 
-- **[CyberAI Agency Blog](https://cyberai.agency/blog)** ⚡ — Cloud security tools, AI agents, and threat intelligence.
-- **[Rhino Security Labs](https://rhinosecuritylabs.com/blog/)** — AWS/cloud penetration testing research.
-- **[Wiz Research](https://www.wiz.io/blog/tag/research)** — Cloud security vulnerability research.
-- **[Christophe Tafani-Dereeper](https://blog.christophetd.fr/)** — Cloud security attack techniques and research.
-- **[NCC Group Research](https://research.nccgroup.com/)** — Security research including cloud and AI security.
-- **[The Hacker News](https://thehackernews.com/)** — Breaking cybersecurity news and vulnerability coverage.
-- **[CISA Advisories](https://www.cisa.gov/news-events/cybersecurity-advisories)** — US government cybersecurity advisories.
-- **[Krebs on Security](https://krebsonsecurity.com/)** — Investigative cybersecurity journalism.
+| Provider | Link |
+|---|---|
+| Oracle OCI | [docs.oracle.com/iaas](https://docs.oracle.com/en-us/iaas/Content/home.htm) |
+| AWS | [docs.aws.amazon.com](https://docs.aws.amazon.com/) |
+| Azure | [docs.microsoft.com/azure](https://docs.microsoft.com/en-us/azure/) |
+| GCP | [cloud.google.com/docs](https://cloud.google.com/docs) |
+| NIST | [csrc.nist.gov](https://csrc.nist.gov/) |
+| CISA | [cisa.gov](https://www.cisa.gov/) |
+
+---
+
+## Blogs & Research
+
+- [CyberAI Agency Blog](https://cyberai.agency/blog) ⚡ — Cloud security tools, AI agents, and threat intelligence
+- [Wiz Research](https://www.wiz.io/blog/tag/research) — Cloud security vulnerability research
+- [CISA Advisories](https://www.cisa.gov/news-events/cybersecurity-advisories) — US government cybersecurity advisories
+- [Oracle Security Blog](https://blogs.oracle.com/cloudsecurity/) — OCI security updates and guidance
+- [AWS Security Blog](https://aws.amazon.com/blogs/security/) — Official AWS security blog
+- [Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/) — Official Microsoft security blog
+- [Google Cloud Security Blog](https://cloud.google.com/blog/products/identity-security) — GCP security updates
 
 ---
 
 ## Conferences & Communities
 
-- **[DEF CON Cloud Village](https://cloud-village.org/)** — Annual cloud security track at DEF CON.
-- **[CloudSecNext](https://cloudsecnext.com/)** — Dedicated cloud security conference.
-- **[BSides](https://www.securitybsides.com/)** — Community-driven security conferences worldwide.
-- **[RSA Conference](https://www.rsaconference.com/)** — Major enterprise security conference.
-- **[r/netsec](https://reddit.com/r/netsec)** — Reddit's technical network security community.
-- **[r/blueteamsec](https://reddit.com/r/blueteamsec)** — Reddit's defensive security community.
-- **[CyberAI Agency Discord](https://discord.gg/cyberai-agency)** ⚡ — Community for cloud security professionals.
+- [DEF CON Cloud Village](https://cloud-village.org/) — Annual cloud security track at DEF CON
+- [CloudSecNext](https://cloudsecnext.com/) — Dedicated cloud security conference
+- [BSides](https://www.securitybsides.com/) — Community-driven security conferences worldwide
+- [RSA Conference](https://www.rsaconference.com/) — Major enterprise security conference
+- [r/netsec](https://reddit.com/r/netsec) — Technical network security community
+- [r/blueteamsec](https://reddit.com/r/blueteamsec) — Defensive security community
+- [CyberAI Agency Discord](https://discord.gg/cyberai-agency) ⚡ — Cloud security community
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
-- Add tools with a brief one-line description and GitHub link
-- Maintain alphabetical order within sections
-- Verify all links are working before submitting a PR
-- ⚡ marks tools built by CyberAI Agency
+- Suggested additions: official documentation, learning resources, certifications, and practice labs
+- Keep descriptions concise — one line per entry
+- ⚡ marks tools and resources built by CyberAI Agency
 
 ---
 
